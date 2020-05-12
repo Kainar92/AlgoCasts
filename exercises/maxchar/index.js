@@ -24,4 +24,6 @@ function maxChar(str) {
     return maxChar;
 }
 
+console.log(maxChar('zzaaabbaaccc'))
+
 module.exports = maxChar;
