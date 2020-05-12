@@ -17,18 +17,19 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-    for(let i = 0; i < n; i++) {
-        let stair = '';
-        for(let j = 0; j < n; j++) {
-            if(j <= i) {
-                stair += '#'
-            } else {
-                stair += ' '
-            }    
-        }
-        console.log(stair)
+function steps(n, row = 0, stair = '') {
+    
+    if(n === row) {
+        return
     }
+
+    if(n === stair.length) {
+        console.log(stair)
+        return steps(n, row + 1)
+    }
+
+    const add = stair.length <= row ? '#' : ' ';
+    steps(n, row, stair + add)
 }
 
 steps(4)
@@ -40,4 +41,40 @@ module.exports = steps;
 //     for(let i = 0; i < n; i++) {
 //         console.log('#'.repeat(i + 1))
 //     }
+// }
+
+// #2
+// function steps(n) {
+//     for(let i = 0; i < n; i++) {
+//         let stair = '';
+//         for(let j = 0; j < n; j++) {
+//             if(j <= i) {
+//                 stair += '#'
+//             } else {
+//                 stair += ' '
+//             }    
+//         }
+//         console.log(stair)
+//     }
+// }
+
+// #3
+// function steps(n, row = 0, stair = '') {
+    
+//     if(n === row) {
+//         return
+//     }
+
+//     if(n === stair.length) {
+//         console.log(stair)
+//         return steps(n, row + 1)
+//     }
+
+//     if(stair.length <= row) {
+//         stair += '#'
+//     } else {
+//         stair += ' '
+//     }
+
+//     steps(n, row, stair)
 // }
