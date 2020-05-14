@@ -45,7 +45,6 @@ function matrix(n) {
         }
         endColumn--;
 
-
         // bottom row
         for(let i = endColumn; i >= startColumn; i--) {
             results[endRow][i] = counter;
@@ -62,8 +61,6 @@ function matrix(n) {
     }
 
     return results;
-
-
 }
 
 console.log(matrix(5));
